@@ -4,8 +4,10 @@
 <a href="vary.xiaomy.net"><img src="https://img.shields.io/badge/demo-blue"></a> 
 
 
+[Haoran Wei*](https://scholar.google.com/citations?user=J4naK0MAAAAJ&hl=en), Lingyu Kong*, Jinyue Chen, Liang Zhao, [Zheng Ge](https://joker316701882.github.io/), [En Yu](https://scholar.google.com.hk/citations?user=rWCQMNgAAAAJ&hl=zh-CN&oi=sra), [Jianjian Sun](https://scholar.google.com/citations?user=MVZrGkYAAAAJ&hl=en), Chunrui Han, [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en)
+
 <p align="center">
-<img src="[assets/logo.jpg](https://github.com/Ucas-HaoranWei/Vary-toy/assets/50487563/0981d5f1-496c-4183-8c75-8465db59bda2)" style="width: 200px" align=center>
+<img src="[assets/vary-toy-logo.jpg]" style="width: 200px" align=center>
 </p>
 
 
