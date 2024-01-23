@@ -14,7 +14,8 @@
 
 
 ## Release
-- [2024/1/22] 🔥🔥🔥You only need a single 1080Ti to experience all features of current LVLMs.
+- [2024/1/23] 🔥Eval codes will be available soon.
+- [2024/1/23] 🔥🔥🔥You only need a single 1080Ti to experience all features of current LVLMs.
 
 
 
