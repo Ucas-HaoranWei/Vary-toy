@@ -35,7 +35,7 @@ Note：The Vary-toy is based on Vary, if you install the [Vary](https://github.c
 1. Clone this repository and navigate to the Vary folder
 ```bash
 git clone https://github.com/Ucas-HaoranWei/Vary-toy.git
-cd Vary
+cd /path/to/vary
 ```
 2. Install Package
 ```Shell
