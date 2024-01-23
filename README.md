@@ -14,6 +14,7 @@
 
 
 ## Release
+- [2024/1/23] 🔥Paper on arxiv will be available soon.
 - [2024/1/23] 🔥Eval codes will be available soon.
 - [2024/1/23] 🔥🔥🔥You only need a single 1080Ti to experience all features of current LVLMs.
 
