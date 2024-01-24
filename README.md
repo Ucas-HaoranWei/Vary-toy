@@ -2,6 +2,7 @@
 <a href="https://varytoy.github.io/"><img src="https://img.shields.io/badge/Project-Page-Green"></a>
 <a href="https://arxiv.org/abs/2401.12503"><img src="https://img.shields.io/badge/Paper-PDF-orange"></a> 
 <a href="https://vary.xiaomy.net/"><img src="https://img.shields.io/badge/demo-blue"></a> 
+<a href="https://zhuanlan.zhihu.com/p/679447793"><img src="https://img.shields.io/badge/zhihu-yellow"></a> 
 
 
 [Haoran Wei*](https://scholar.google.com/citations?user=J4naK0MAAAAJ&hl=en), Lingyu Kong*, Jinyue Chen, Liang Zhao, [Zheng Ge](https://joker316701882.github.io/), [En Yu](https://scholar.google.com.hk/citations?user=rWCQMNgAAAAJ&hl=zh-CN&oi=sra), [Jianjian Sun](https://scholar.google.com/citations?user=MVZrGkYAAAAJ&hl=en), Chunrui Han, [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en)
