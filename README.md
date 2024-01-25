@@ -70,7 +70,7 @@ python vary/demo/run_qwen_vary.py  --model-name  /vary/model/path/ --image-file 
 ## Train
 ```Shell
 deepspeed   Vary/train/train_qwen_vary.py  --deepspeed /Vary/zero_config/zero2.json
-            --model_name_or_path /Qwen-7B/path/
+            --model_name_or_path /Vary-toy/path/
             --vision_tower /vit-large-patch14/path/
             --freeze_vision_tower True
             --freeze_lm_model False
