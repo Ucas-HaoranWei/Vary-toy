@@ -34,12 +34,15 @@
 - [Demo](#Demo)
 - [Train](#train)
 
+## Note
+If you have built the original [Vary](https://github.com/Ucas-HaoranWei/Vary), please rebuild this repo !!!
+
 ## Install
 Note：The Vary-toy is based on Vary, if you install the [Vary](https://github.com/Ucas-HaoranWei/Vary), you can skip some steps, e.g., 3.
 1. Clone this repository and navigate to the Vary folder
 ```bash
 git clone https://github.com/Ucas-HaoranWei/Vary-toy.git
-cd /path/to/vary
+cd /path/to/vary-toy
 ```
 2. Install Package
 ```Shell
