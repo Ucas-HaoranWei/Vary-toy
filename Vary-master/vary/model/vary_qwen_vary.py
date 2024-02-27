@@ -33,7 +33,9 @@ from vary.model.llm.qwen.modeling_qwen import QWenLMHeadModel, QWenModel
 from vary.model.llm.qwen.configuration_qwen import QWenConfig
 from vary.model.vision_encoder.sam import build_sam_vit_b
 from vary.model.plug.transforms import train_transform, test_transform
+import os
 
+CLIP_MODEL_PATH = os.getenv('CLIP_MODEL_PATH', '/home/lingyuzeng/workdir/project/Vary-toy/clip-vit-large-patch14/')
 
 class varyConfig(QWenConfig):
     model_type = "vary"
@@ -45,7 +47,7 @@ class varyQwenModel(QWenModel):
     def __init__(self, config: QWenConfig):
         super(varyQwenModel, self).__init__(config)
         # TODO download the clip-vit in huggingface
-        self.vision_tower = CLIPVisionModel.from_pretrained('/cache/vit-large-patch14/')
+        self.vision_tower = CLIPVisionModel.from_pretrained(CLIP_MODEL_PATH)
 
         self.vision_tower_high = build_sam_vit_b()    #  build_sam_vit_b(checkpoint = 'xxxx') for train
 
@@ -65,7 +67,7 @@ class varyQwenModel(QWenModel):
 
         # 224*224
         # TODO download the clip-vit in huggingface
-        image_processor = CLIPImageProcessor.from_pretrained('/cache/vit-large-patch14/')
+        image_processor = CLIPImageProcessor.from_pretrained(CLIP_MODEL_PATH)
         # 1024*1024
         image_processor_high = train_transform
 
