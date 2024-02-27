@@ -23,6 +23,8 @@ DEFAULT_IMAGE_PATCH_TOKEN = '<imgpad>'
 DEFAULT_IM_START_TOKEN = '<img>'
 DEFAULT_IM_END_TOKEN = '</img>'
 
+# 使用环境变量获取路径，如果未设置，则使用默认值
+clip_image_processor_path = os.getenv('CLIP_IMAGE_PROCESSOR_PATH', '/home/lingyuzeng/workdir/project/Vary-toy/clip-vit-large-patch14/')
 
 def load_image(image_file):
     if image_file.startswith('http') or image_file.startswith('https'):
@@ -46,7 +48,7 @@ def eval_model(args):
     model.to(device='cuda',  dtype=torch.bfloat16)
 
 
-    image_processor = CLIPImageProcessor.from_pretrained("/data/hypertext/ucaswei/cache/vit-large-patch14/vit-large-patch14/", torch_dtype=torch.float16)
+    image_processor = CLIPImageProcessor.from_pretrained(clip_image_processor_path, torch_dtype=torch.float16)
 
     image_processor_high = BlipImageEvalProcessor(image_size=1024)
 
