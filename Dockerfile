@@ -12,6 +12,8 @@ RUN apt-get update && \
     echo "1" | /tmp/install.sh && \
     micromamba create -n varytoy python=3.10 -y -c conda-forge && \
     micromamba run -n varytoy python -m pip install . -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
+    micromamba run -n varytoy python -m pip install ninja -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
+    micromamba run -n varytoy python -m pip install flash-attn --no-build-isolation -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
     rm -rf /app/Vary-master && \
     rm -rf /tmp/install.sh && \
     rm -rf /root/.cache/pip && \    
