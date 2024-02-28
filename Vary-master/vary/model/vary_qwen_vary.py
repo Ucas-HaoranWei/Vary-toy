@@ -35,7 +35,7 @@ from vary.model.vision_encoder.sam import build_sam_vit_b
 from vary.model.plug.transforms import train_transform, test_transform
 import os
 
-CLIP_MODEL_PATH = os.getenv('CLIP_MODEL_PATH', '/home/lingyuzeng/workdir/project/Vary-toy/clip-vit-large-patch14/')
+CLIP_MODEL_PATH = os.getenv('CLIP_MODEL_PATH', '/app/Vary-master/clip-vit-large-patch14/')
 
 class varyConfig(QWenConfig):
     model_type = "vary"

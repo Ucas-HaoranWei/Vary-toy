@@ -67,9 +67,12 @@ pip install flash-attn --no-build-isolation
 1. Update the CLIP-VIT path in the codes (/cache/vit-large-patch14/) to your path.
 
 2.
+
 ```Shell
-python vary/demo/run_qwen_vary.py  --model-name  /vary/model/path/ --image-file /an/image/file.png
+cd Vary-master/
+python vary/demo/run_qwen_vary.py  --model-name  /home/lingyuzeng/workdir/project/Vary-toy/Varyweight --image-file /home/lingyuzeng/workdir/project/Vary-toy/fork/Vary-toy/1706251406013.png
 ```
+
 ## Train
 ```Shell
 deepspeed   Vary/train/train_qwen_vary.py  --deepspeed /Vary/zero_config/zero2.json
@@ -124,5 +127,68 @@ If you find our work useful in your research, please consider citing Vary:
   journal={arXiv preprint arXiv:2401.12503},
   year={2024}
 }
+```
+
+## RUN api restful server
+
+```
+cd Vary-master/
+pip install e .
+# update the CLIP_MODEL_PATH and MODEL_NAME
+export MODEL_NAME=/path/to/Varyweight
+export CLIP_MODEL_PATH=/path/to/Vary-toy/clip-vit-large-patch14/
+python -m vary.api # run api restful server on port 8000
+```
+
+test api:
+
+```python
+import requests
+url = "http://127.0.0.1:8000/eval-image/"
+file_path = "1706251406013.png"
+files = {"file": open(file_path, "rb")}
+data = {"token": "secret-token"}
+response = requests.post(url, files=files, data=data)
+print(response.json())
+print(response.status_code)
+```
+
+or run with docker:
+
+first to install Nvidia GPU:
+
+```
+sudo curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | \
+  sudo apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+sudo curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | \
+  sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+sudo apt-get update
+
+sudo apt-get install nvidia-container-runtime
+sudo nvidia-ctk runtime configure --runtime=docker
+which nvidia-container-runtime
+```
+
+
+then run docker-compose:
+
+git repo: 
+
+- Download the Vary-toy weights [here](https://huggingface.co/Haoran-megvii/Vary-toy). 
+- Download the CLIP-VIT-L [here](https://huggingface.co/openai/clip-vit-large-patch14/).
+
+change docker-compose.yml volume path:
+
+```shell
+    volumes:
+      - ./clip-vit-large-patch14:/app/Vary-master/clip-vit-large-patch14
+      - ./Varyweight:/app/Vary-master/Varyweight
+```
+
+then run:
+
+```shell
+docker-compose up -d
 ```
 

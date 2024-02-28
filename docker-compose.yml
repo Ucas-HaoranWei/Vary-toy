@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  varytoy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - MODEL_NAME=/app/Vary-master/Varyweight
+      - CLIP_MODEL_PATH=/app/Vary-master/clip-vit-large-patch14
+    restart: always
+    image: hotwa/varytoy:latest
+    container_name: varytoy
+    volumes:
+      - "./clip-vit-large-patch14:/app/Vary-master/clip-vit-large-patch14:rw"
+      - "./Varyweight:/app/Vary-master/Varyweight:rw"
+    ports:
+      - "8000:8000"
+    runtime: nvidia
