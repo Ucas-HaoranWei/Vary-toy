@@ -8,13 +8,14 @@ COPY Vary-master /app/Vary-master
 WORKDIR /app/Vary-master
 
 ENV MAMBA_ROOT_PREFIX=/root/micromamba
+ENV CUDA_HOME=/usr/local/cuda-12
 RUN apt-get update && \
-    apt-get install -y jq curl tar bzip2 libgl1-mesa-glx libglib2.0-0 && \
+    apt-get install -y git jq curl tar bzip2 libgl1-mesa-glx libglib2.0-0 && \
     echo "1" | /tmp/install.sh && \
     micromamba create -n varytoy python=3.10 -y -c conda-forge && \
     micromamba run -n varytoy python -m pip install . -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
     micromamba run -n varytoy python -m pip install ninja -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
-    micromamba run -n varytoy python -m pip install flash-attn --no-build-isolation -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
+    micromamba run -n varytoy python -m pip install --use-pep517 flash-attn --no-build-isolation -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com && \
     rm -rf /app/Vary-master && \
     rm -rf /tmp/install.sh && \
     rm -rf /root/.cache/pip && \    
