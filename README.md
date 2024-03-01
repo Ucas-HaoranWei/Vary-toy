@@ -178,6 +178,8 @@ git repo:
 - Download the Vary-toy weights [here](https://huggingface.co/Haoran-megvii/Vary-toy). 
 - Download the CLIP-VIT-L [here](https://huggingface.co/openai/clip-vit-large-patch14/).
 
+`mv Vary-toy/ Varyweight`
+
 change docker-compose.yml volume path:
 
 ```shell
