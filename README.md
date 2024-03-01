@@ -144,8 +144,8 @@ test api:
 
 ```python
 import requests
-url = "http://127.0.0.1:8000/eval-image/"
-file_path = "1706251406013.png"
+url = "http://127.0.0.1:58616/eval-image/"
+file_path = "Vary-master/vary/demo/1706251406013.png"
 files = {"file": open(file_path, "rb")}
 data = {"token": "secret-token"}
 response = requests.post(url, files=files, data=data)

@@ -14,5 +14,5 @@ services:
       - "./clip-vit-large-patch14:/app/Vary-master/clip-vit-large-patch14:rw"
       - "./Varyweight:/app/Vary-master/Varyweight:rw"
     ports:
-      - "8000:8000"
+      - "58616:58616"
     runtime: nvidia

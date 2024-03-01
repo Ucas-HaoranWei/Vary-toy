@@ -15,6 +15,7 @@ from vary.model.plug.blip_process import BlipImageEvalProcessor
 from vary.utils.conversation import conv_templates, SeparatorStyle
 from vary.utils.utils import KeywordsStoppingCriteria, disable_torch_init
 from torchvision.transforms import functional as F
+import argparse
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -134,7 +135,3 @@ def eval_model(image: Image, model_name: str = DEFAULT_MODEL_NAME, conv_mode: st
 
     outputs = tokenizer.decode(output_ids[0, input_ids.shape[1]:]).strip()
     return outputs
-
-def main():
-    uvicorn.run("vary.api.server:app", host="0.0.0.0", port=8000, reload=True)
-
