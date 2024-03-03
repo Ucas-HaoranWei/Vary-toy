@@ -129,6 +129,14 @@ If you find our work useful in your research, please consider citing Vary:
 }
 ```
 
+## device requirement
+
+support GPU bfloat16 training and inference.
+
+does not support GPU V100, T4.
+
+The NVIDIA T4 GPU does not support bfloat16 natively, as indicated in a comparison table that mentions Nvidia Volta (V100) and Turing (T4) do not support bfloat16, while Nvidia Ampere (A100) does​​. Therefore, if your application or model requires bfloat16 precision, it would be advisable to use a GPU from the Ampere series, such as the A100, which provides native support for bfloat16.
+
 ## RUN api restful server
 
 ```
@@ -137,7 +145,7 @@ pip install e .
 # update the CLIP_MODEL_PATH and MODEL_NAME
 export MODEL_NAME=/path/to/Varyweight
 export CLIP_MODEL_PATH=/path/to/Vary-toy/clip-vit-large-patch14/
-python -m vary.api # run api restful server on port 8000
+micromamba run -n varytoy python -m vary.api --host 0.0.0.0 --port 58616
 ```
 
 test api:
@@ -154,6 +162,13 @@ print(response.status_code)
 # or 
 curl -X POST -F "file=@Vary-master/vary/demo/1706251406013.png" -F "token=secret-token" http://127.0.0.1:58616/eval-image/
 ```
+
+use curl:
+
+```shell
+curl -X POST -F "token=secret-token" -F "file=@Vary-master/vary/demo/1706251406013.png" http://127.0.0.1:58616/eval-image/
+```
+
 
 or run with docker:
 
