@@ -151,6 +151,8 @@ data = {"token": "secret-token"}
 response = requests.post(url, files=files, data=data)
 print(response.json())
 print(response.status_code)
+# or 
+curl -X POST -F "file=@Vary-master/vary/demo/1706251406013.png" -F "token=secret-token" http://127.0.0.1:58616/eval-image/
 ```
 
 or run with docker:
