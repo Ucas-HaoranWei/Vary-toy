@@ -16,3 +16,11 @@ services:
     ports:
       - "58616:58616"
     runtime: nvidia
+
+  frpc:
+    image: snowdreamtech/frpc
+    container_name: frpc
+    volumes:
+      - "./frpc.toml:/etc/frp/frpc.toml:ro"
+    network_mode: "host"
+    restart: always
