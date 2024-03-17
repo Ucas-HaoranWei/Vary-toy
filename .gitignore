@@ -1,0 +1,7 @@
+vary.egg-info
+build
+__pycache__
+*.pyc
+.gitigore
+Varyweight
+clip-vit-large-patch14

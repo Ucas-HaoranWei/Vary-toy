@@ -17,12 +17,16 @@ from io import BytesIO
 from vary.model.plug.blip_process import BlipImageEvalProcessor
 from transformers import TextStreamer
 from vary.model.plug.transforms import train_transform, test_transform
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 DEFAULT_IMAGE_TOKEN = "<image>"
 DEFAULT_IMAGE_PATCH_TOKEN = '<imgpad>'
 DEFAULT_IM_START_TOKEN = '<img>'
 DEFAULT_IM_END_TOKEN = '</img>'
 
+# 使用环境变量获取路径，如果未设置，则使用默认值
+CLIP_MODEL_PATH = os.getenv('CLIP_MODEL_PATH', '/app/Vary-master/clip-vit-large-patch14/')
 
 def load_image(image_file):
     if image_file.startswith('http') or image_file.startswith('https'):
@@ -46,7 +50,7 @@ def eval_model(args):
     model.to(device='cuda',  dtype=torch.bfloat16)
 
 
-    image_processor = CLIPImageProcessor.from_pretrained("/data/hypertext/ucaswei/cache/vit-large-patch14/vit-large-patch14/", torch_dtype=torch.float16)
+    image_processor = CLIPImageProcessor.from_pretrained(CLIP_MODEL_PATH, torch_dtype=torch.float16)
 
     image_processor_high = BlipImageEvalProcessor(image_size=1024)
 
@@ -60,9 +64,6 @@ def eval_model(args):
         qs = DEFAULT_IM_START_TOKEN + DEFAULT_IMAGE_PATCH_TOKEN*image_token_len + DEFAULT_IM_END_TOKEN  + '\n' + qs
     else:
         qs = DEFAULT_IMAGE_TOKEN + '\n' + qs
-
-
-    
 
     conv_mode = "mpt"
     args.conv_mode = conv_mode
@@ -102,17 +103,18 @@ def eval_model(args):
             max_new_tokens=2048,
             stopping_criteria=[stopping_criteria]
             )
-        
-        # print(output_ids)
+    # print(output_ids)
 
-        # outputs = tokenizer.decode(output_ids[0, input_ids.shape[1]:]).strip()
-        
-        # # conv.messages[-1][-1] = outputs
-        # if outputs.endswith(stop_str):
-        #     outputs = outputs[:-len(stop_str)]
-        # outputs = outputs.strip()
+    outputs = tokenizer.decode(output_ids[0, input_ids.shape[1]:]).strip()
+    
+    # conv.messages[-1][-1] = outputs
+    if outputs.endswith(stop_str):
+        outputs = outputs[:-len(stop_str)]
+    outputs = outputs.strip()
 
-        # print(outputs)
+    # print(outputs)
+
+    return outputs
 
 
 
