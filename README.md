@@ -17,6 +17,7 @@
 
 
 ## Release
+- [2024/4/12]🔥🔥🔥We will release a chart parsing model based on Vary-tiny next week. The model supports both English and Chinese charts.
 - [2024/3/16]🔥🔥🔥I found many friends very interested in Vary-tiny(OPT-125M), so I opened source it [here](https://huggingface.co/HaoranWei/Vary-tiny-opt125M/tree/main), a PDF-dense OCR and object detection version.
 - [2024/1/23] 🔥Eval codes will be available soon.
 - [2024/1/23] 🔥🔥🔥You only need a single 1080Ti to experience all features of current LVLMs.
