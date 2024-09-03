@@ -17,6 +17,7 @@
 
 
 ## Release
+- [2024/9/03] 🔥🔥🔥 We release a very strong and comprehensive OCR model [GOT-OCR2.0](https://github.com/Ucas-HaoranWei/GOT-OCR2.0).
 - [2024/7/21] 🎉🎉🎉 OneChart is accepted by ACM'MM 2024 **Oral**! (3.97%)
 - [2024/7/2] 🔥🔥🔥 Vary is accepted by ECCV2024. To thank everyone for their attention, I will release a model that performs on par with the Vary-document soon.
 - [2024/5/27] 🔥🔥🔥 We present a document understanding benchmark in [Fox](https://github.com/ucaslcl/Fox) .
