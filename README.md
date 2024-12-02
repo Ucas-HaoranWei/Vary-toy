@@ -122,11 +122,13 @@ Vary-toy is not a toy, and we have designed two excellent models based on it, on
 ## Citation
 If you find our work useful in your research, please consider citing Vary:
 ```bibtex
-@article{wei2023vary,
-  title={Vary: Scaling up the Vision Vocabulary for Large Vision-Language Models},
+@inproceedings{wei2025vary,
+  title={Vary: Scaling up the vision vocabulary for large vision-language model},
   author={Wei, Haoran and Kong, Lingyu and Chen, Jinyue and Zhao, Liang and Ge, Zheng and Yang, Jinrong and Sun, Jianjian and Han, Chunrui and Zhang, Xiangyu},
-  journal={arXiv preprint arXiv:2312.06109},
-  year={2023}
+  booktitle={European Conference on Computer Vision},
+  pages={408--424},
+  year={2025},
+  organization={Springer}
 }
 
 @article{wei2024small,
