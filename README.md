@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-<a href="">The Young's First ``Large'' Vision Language Model</a>       
+<a href="">Two-Stream Hypothesis for LVLMs</a>       
 </p>
 
 
